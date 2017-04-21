@@ -10,8 +10,8 @@
 
 
 5.times do
-  game = Event.create(category: Faker::Team.sport.capitalize,
-                      name: Faker::Team.name.upcase + " vs. " + Faker::Team.name.upcase,
-                      date_and_time: Faker::Time.forward(60, :evening),
-                      capacity: 100)
+    Event.create(category: Faker::Team.sport.capitalize,
+                 name: Faker::Team.name.upcase + " vs. " + Faker::Team.name.upcase,
+                 date_and_time: Faker::Time.forward(60, :evening),
+                 capacity: 100)
 end
