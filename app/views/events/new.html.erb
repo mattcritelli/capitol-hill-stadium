@@ -1,0 +1,20 @@
+<h1>Create a new event</h1>
+
+<%= form_for :event, url: events_path do |f| %>
+  <p>
+    <%= f.label :category %><br>
+    <%= f.text_field :category %>
+  </p>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.datetime_select :date_and_time, :ampm => true, :minute_step => 15 %><br>
+  </p>
+  <p>
+    <%= f.label :capacity %><br>
+    <%= f.number_field :capacity %>
+  </p>
+  <%= f.submit %>
+<% end %>

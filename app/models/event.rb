@@ -3,7 +3,7 @@ class Event < ApplicationRecord
   has_many :users, through: :tickets
 
   def format_date
-    self.date_and_time.strftime("%b,%d %Y")
+    self.date_and_time.strftime("%b %d, %Y")
   end
 
   def format_time
