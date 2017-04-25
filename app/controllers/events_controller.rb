@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  #before_action :set_event
+  before_action :authenticate_user!
 
   def index
     @events = Event.all
