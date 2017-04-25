@@ -22,13 +22,13 @@ User.create(admin: true,
             email: "admin@email.com",
             password_digest: "password")
 
-2.times do
-  User.create(admin: false,
-              first_name: Faker::Name.first_name,
-              last_name: Faker::Name.last_name,
-              email: Faker::Internet.email,
-              password_digest: "password")
-end
+# 2.times do
+#   User.create(admin: false,
+#               first_name: Faker::Name.first_name,
+#               last_name: Faker::Name.last_name,
+#               email: Faker::Internet.email,
+#               password_digest: "password")
+# end
 
 50.times do
   Ticket.create(event_id: (1..5).to_a.sample,
