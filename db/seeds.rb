@@ -16,11 +16,11 @@
                 capacity: 100)
 end
 
-User.create(admin: true,
-            first_name: Faker::Name.first_name,
-            last_name: Faker::Name.last_name,
-            email: "admin@email.com",
-            password_digest: "password")
+# User.create(admin: true,
+#             first_name: Faker::Name.first_name,
+#             last_name: Faker::Name.last_name,
+#             email: "admin@email.com",
+#             password_digest: "password")
 
 # 2.times do
 #   User.create(admin: false,
