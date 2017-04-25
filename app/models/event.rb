@@ -1,6 +1,5 @@
 class Event < ApplicationRecord
   has_many :tickets, dependent: :destroy
-  has_many :users, through: :tickets
   validates_presence_of :category, :name, :date_and_time, :capacity
   validates_numericality_of :capacity, :greater_than => 0
 

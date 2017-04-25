@@ -30,9 +30,9 @@ end
 #               password_digest: "password")
 # end
 
-50.times do
-  Ticket.create(event_id: (1..5).to_a.sample,
-                user_id: [2,3].sample,
-                price: [10,20].sample,
-                seat: (1..100).to_a.sample)
-end
+# 50.times do
+#   Ticket.create(event_id: (1..5).to_a.sample,
+#                 user_id: [2,3].sample,
+#                 price: [10,20].sample,
+#                 seat: (1..100).to_a.sample)
+# end
