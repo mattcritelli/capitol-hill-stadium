@@ -19,8 +19,8 @@ class EventsController < ApplicationController
       flash[:notice] = "This event has been added."
       redirect_to event_path(@event)
     else
-      flash[:notice] = "Sorry, there was an issue adding this event."
-      redirect_to new_event
+      @errors = @event.errors.full_messages
+      render new_event_path
     end
   end
 
@@ -34,8 +34,9 @@ class EventsController < ApplicationController
       flash[:notice] = "This event has been updated."
       redirect_to event_path(@event)
     else
-      flash[:notice] = "Sorry, there was an issue updating this event."
-      redirect_to event_path(@event)
+      @errors = @event.errors.full_messages
+      p @errors
+      render :edit
     end
   end
 

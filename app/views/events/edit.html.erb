@@ -1,5 +1,13 @@
 <h1>Update event:</h1>
 
+<% if @errors %>
+  <% @errors.each do |msg| %>
+    <ul>
+      <li class="error"><%= msg %></li>
+    </ul>
+  <% end %>
+<% end %>
+
 <%= form_for(@event) do |f| %>
   <p>
     <%= f.label :category %><br>
