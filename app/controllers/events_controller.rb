@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  #before_action :set_event
 
   def index
     @events = Event.all
@@ -15,13 +16,34 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     if @event.save
-      flash[:notice] = "This event has been added"
+      flash[:notice] = "This event has been added."
       redirect_to event_path(@event)
     else
-      flash[:notice] = "This event was not saved"
+      flash[:notice] = "Sorry, there was an issue adding this event."
       redirect_to new_event
     end
+  end
 
+  def edit
+    @event = Event.find(params[:id])
+  end
+
+  def update
+    @event = Event.find(params[:id])
+    if @event.update(event_params)
+      flash[:notice] = "This event has been updated."
+      redirect_to event_path(@event)
+    else
+      flash[:notice] = "Sorry, there was an issue updating this event."
+      redirect_to event_path(@event)
+    end
+  end
+
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+
+    redirect_to events_path
   end
 
 
@@ -30,6 +52,10 @@ class EventsController < ApplicationController
   def event_params
     params.require(:event).permit(:category, :name, :date_and_time, :capacity)
   end
+
+  # def set_event
+  #   @event = Event.find(params[:id])
+  # end
 
 
 end
