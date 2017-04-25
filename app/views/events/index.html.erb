@@ -1,6 +1,8 @@
 
 <h1>Upcoming Events</h1>
 
+<%= link_to 'Add New Event', new_event_path %> <br><br>
+
 <table>
   <thead>
     <tr>
@@ -14,7 +16,7 @@
   <% @events.each do |event| %>
     <tbody>
       <td><%= event.category %></td>
-      <td><%= event.name %></td>
+      <td><%= link_to event.name, event_path(event) %></td>
       <td><%= event.format_date %></td>
       <td><%= event.format_time %></td>
       <td><%= event.tickets_remaining %></td>
