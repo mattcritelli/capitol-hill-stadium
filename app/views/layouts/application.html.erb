@@ -19,14 +19,21 @@
       <aside class="alert alert-danger">
         <%= alert %>
       </aside>
-    <% end %><section>
-      <% if current_user %>
-        <%= "Welcome, #{current_user.email}" %> |
-        <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
-      <% else %>
-        <%= link_to "Log in", new_user_session_path %> |
-        <%= link_to "Register", new_user_registration_path %>
-      <% end %>
+    <% end %>
+    <section>
+      <div class="nav">
+        <div class="container">
+          <ul class="pull-left">
+            <% if current_user %>
+              <li><%= "Welcome, #{current_user.email}" %></li> |
+              <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to "Log in", new_user_session_path %></li>  |
+              <li><%= link_to "Register", new_user_registration_path %></li>
+            <% end %>
+          </ul>
+        </div>
+    </div>
     <p>
       Future Dashboard
     </p>
