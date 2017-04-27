@@ -9,7 +9,7 @@
     <%= javascript_include_tag *webpack_asset_paths("application") %>
   </head>
 
-  <body class="container">
+  <body>
     <% if notice.present? %>
       <aside class="alert alert-info">
         <%= notice %>
@@ -33,11 +33,11 @@
             <% end %>
           </ul>
         </div>
-    </div>
+      </div>
+    </section>
     <p>
       Future Dashboard
     </p>
-    </section>
     <%= yield %>
   </body>
 </html>
