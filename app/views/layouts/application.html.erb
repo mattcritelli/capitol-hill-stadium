@@ -31,7 +31,7 @@
         <div class="container">
           <ul class="pull-left">
             <% if current_user %>
-              <li></li>
+              <li><%= link_to "My Dashboard", user_path(current_user) %></li> |
             <% end %>
             <li><%= link_to "Events", events_path %></li>
         </ul>
