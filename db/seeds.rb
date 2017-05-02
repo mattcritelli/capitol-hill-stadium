@@ -8,13 +8,22 @@
 #                        date_and_time: DateTime.new(2017,05,01,19,30),
 #                        capacity: 100)
 
-
-5.times do
+#Create sporting events
+20.times do
   Event.create(category: Faker::Team.sport.capitalize,
                 name: Faker::Team.name.upcase + " vs. " + Faker::Team.name.upcase,
                 date_and_time: Faker::Time.forward(60, :evening),
                 capacity: 100)
 end
+
+#Create music events
+20.times do
+  Event.create(category: "Music",
+                name: Faker::RockBand.name,
+                date_and_time: Faker::Time.forward(60, :evening),
+                capacity: 100)
+end
+
 
 # User.create(admin: true,
 #             first_name: Faker::Name.first_name,
