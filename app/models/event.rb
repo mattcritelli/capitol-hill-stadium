@@ -15,4 +15,8 @@ class Event < ApplicationRecord
     self.capacity - self.tickets.count
   end
 
+  def sold_out?
+    self.tickets_remaining == 0
+  end
+
 end

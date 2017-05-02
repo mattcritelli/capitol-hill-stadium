@@ -23,3 +23,11 @@ end
                 date_and_time: Faker::Time.forward(60, :evening),
                 capacity: 100)
 end
+
+#Sell out first event to check model logic
+100.times do
+  Ticket.create(
+    event_id: 1,
+    price: 50,
+    seat: "GA")
+end
