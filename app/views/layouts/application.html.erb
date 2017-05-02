@@ -10,16 +10,8 @@
   </head>
 
   <body>
-    <% if notice.present? %>
-      <aside class="alert alert-info">
-        <%= notice %>
-      </aside>
-    <% end %>
-    <% if alert.present? %>
-      <aside class="alert alert-danger">
-        <%= alert %>
-      </aside>
-    <% end %>
+    <%= render "pages/notice" %>
+
     <section>
       <div class="nav">
         <div class="container">
@@ -35,9 +27,16 @@
         </div>
       </div>
     </section>
-    <p>
-      Future Dashboard
-    </p>
+    <div class="nav">
+        <div class="container">
+          <ul class="pull-left">
+            <% if current_user %>
+              <li></li>
+            <% end %>
+            <li><%= link_to "Events", events_path %></li>
+        </ul>
+      </div>
+    </div>
     <%= yield %>
   </body>
 </html>
