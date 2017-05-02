@@ -24,11 +24,6 @@ ActiveRecord::Schema.define(version: 20170426192528) do
     t.datetime "updated_at",    null: false
   end
 
-  create_table "profiles", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "tickets", force: :cascade do |t|
     t.integer  "event_id"
     t.integer  "price"
