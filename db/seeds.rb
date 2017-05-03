@@ -26,10 +26,10 @@
 
 
 #Sell out first event to check model logic
-# 100.times do
-  # Ticket.create(
-  #   event_id: 1,
-  #   user_id: 2,
-  #   price: 50,
-  #   seat: "GA")
-# end
+100.times do
+  Ticket.create(
+    event_id: 1,
+    user_id: 2,
+    price: 50,
+    seat: "GA")
+end
