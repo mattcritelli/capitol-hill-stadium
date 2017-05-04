@@ -1,16 +1,36 @@
-<h1><%= @event.name %></h1>
+<div class="container">
+  <h1><%= @event.name %></h1>
+</div>
 
-<%= link_to 'Back to Event Listings', events_path %>
+<div class="container">
+  <%= link_to 'Back to Event Listings', events_path %>
+</div>
 
 <p class="notice"><%= notice %></p>
 
-<p>Tickets Remaining: <%= @event.tickets_remaining %> </p>
-<p>Date: <%= @event.format_date %></p>
-<p>Time: <%= @event.format_time %></p>
+<div class="container">
+  <p>Tickets Remaining: <%= @event.tickets_remaining %> </p>
+  <p>Date: <%= @event.format_date %></p>
+  <p>Time: <%= @event.format_time %></p>
+</div>
 
-<% if current_user.try(:admin?) %>
-  <%= link_to "Edit", edit_event_path(@event) %>
-  <%= link_to "Delete", event_path(@event), method: :delete, data: { confirm: "Are you sure you would like to delete this event?"} %>
-<% else %>
-  <p>Sorry, only admins can edit or delete an event</p>
-<% end %>
+<div class="container">
+  <% if @event.sold_out? %>
+    <%= "Sorry, this event is sold out" %>
+  <% else %>
+    <% if !current_user %>
+      <%= "You must be logged in to buy tickets" %>
+    <% else %>
+      <%= "Buy tickets here." %>
+    <% end %>
+  <% end %>
+</div>
+
+<br>
+
+<div class="container">
+  <% if current_user.try(:admin?) %>
+    <%= link_to "Edit", edit_event_path(@event) %>
+    <%= link_to "Delete", event_path(@event), method: :delete, data: { confirm: "Are you sure you would like to delete this event?"} %>
+  <% end %>
+</div>

@@ -4,4 +4,11 @@
 
 <div class="container">
     <h2>Events attending:</h2>
+
+    <ul>
+    <% @user.events.group("id").each do |event| %>
+      <li><%= event.name %></li>
+    <% end %>
+    </ul>
+
 </div>

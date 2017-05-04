@@ -1,24 +1,30 @@
-<h1>Upcoming Events</h1>
+<div class="container">
+  <h1>Upcoming Events</h1>
+</div>
 
-<%= link_to 'Add New Event', new_event_path %> <br><br>
+<div class="container">
+  <%= link_to 'Add New Event', new_event_path %> <br><br>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Category</th>
-      <th>Name</th>
-      <th>Date</th>
-      <th>Time</th>
-      <th>Tickets Remaining</th>
-    </tr>
-  </thead>
-  <% @events.each do |event| %>
-    <tbody>
-      <td><%= event.category %></td>
-      <td><%= link_to event.name, event_path(event) %></td>
-      <td><%= event.format_date %></td>
-      <td><%= event.format_time %></td>
-      <td><%= event.tickets_remaining %></td>
-    </tbody>
-  <% end %>
-</table>
+<div class="container">
+  <table>
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Name</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Tickets Remaining</th>
+      </tr>
+    </thead>
+    <% @events.each do |event| %>
+      <tbody>
+        <td><%= event.category %></td>
+        <td><%= link_to event.name, event_path(event) %></td>
+        <td><%= event.format_date %></td>
+        <td><%= event.format_time %></td>
+        <td><%= event.tickets_remaining %></td>
+      </tbody>
+    <% end %>
+  </table>
+</div>
