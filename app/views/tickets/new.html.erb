@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Buy ticket for <%= @event.name %> </h1>
+</div>
+
+<div class="container" id="buy-ticket">
+  <%= form_for ([@event, @ticket]) do |f| %>
+  <%= f.hidden_field :event_id, :value => @event.id %>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+  <p>
+    <%= f.label :price %>
+    <%= f.select :price, [['VIP $100', 100],['GA $50', 50]] %>
+  </p>
+  <p>
+    <%= f.label :seat %>
+    <%= f.select :seat, ['GA'] %>
+  </p>
+  <%= f.submit %>
+  <% end %>
+</div>

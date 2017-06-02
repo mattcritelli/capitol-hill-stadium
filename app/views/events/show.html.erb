@@ -21,7 +21,7 @@
     <% if !current_user %>
       <%= "You must be logged in to buy tickets" %>
     <% else %>
-      <%= "Buy tickets here." %>
+      <%= link_to "Buy tickets here.", new_event_ticket_path(@event) %>
     <% end %>
   <% end %>
 </div>
