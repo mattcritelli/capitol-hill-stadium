@@ -1,9 +1,8 @@
 .app {
-  position: relative;
+  background-attachment: fixed;
   width: 100%;
-  height: 100vh;
-  background-image: url('http://www.diyphotography.net/wordpress/wp-content/uploads/2014/03/adam-elmakias-08.jpg');
-  background-size: cover;
+  height: 100%;
+  background-image: url('../public/adam-elmakias-08.jpg');
 }
 
 .nav {
@@ -25,4 +24,28 @@
 
 .notice {
   color: red;
+}
+
+.carousel-caption {
+  background-color: black;
+  border-radius: 15px 0px 0px 0px;
+  opacity: 0.8;
+}
+
+#main-header {
+  background-color: lightsteelblue;
+  margin: 0px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+#event-listing {
+  background-color: white;
+  padding: 10px 0px 10px 0px;
+  margin: 10px 0px 10px 0px;
+  border-radius: 10px;
+}
+
+#column-header {
+  font-weight: bold;
 }

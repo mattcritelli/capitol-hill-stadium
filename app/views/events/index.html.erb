@@ -1,5 +1,9 @@
 <div class="container">
-  <h1>Upcoming Events</h1>
+  <div class="row"  id="main-header">
+    <div class="col-md-12">
+      <h1>Upcoming Events</h1>
+    </div>
+  </div>
 </div>
 
 <div class="container">
@@ -7,24 +11,44 @@
 </div>
 
 <div class="container">
-  <table>
-    <thead>
-      <tr>
-        <th>Category</th>
-        <th>Name</th>
-        <th>Date</th>
-        <th>Time</th>
-        <th>Tickets Remaining</th>
-      </tr>
-    </thead>
-    <% @events.each do |event| %>
-      <tbody>
-        <td><%= event.category %></td>
-        <td><%= link_to event.name, event_path(event) %></td>
-        <td><%= event.format_date %></td>
-        <td><%= event.format_time %></td>
-        <td><%= event.tickets_remaining %></td>
-      </tbody>
-    <% end %>
-  </table>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row text-center" id="event-listing">
+        <div class="col-md-2 text-bold">
+          <p id="column-header">Event Category</p>
+        </div>
+        <div class="col-md-4">
+          <p id="column-header">Event Name</p>
+        </div>
+        <div class="col-md-2">
+          <p id="column-header">Date</p>
+        </div>
+        <div class="col-md-2">
+          <p id="column-header">Time</p>
+        </div>
+        <div class="col-md-2">
+          <p id="column-header">Tickets Remaining</p>
+        </div>
+      </div>
+      <% @events.each do |event| %>
+        <div class="row text-center" id="event-listing">
+          <div class="col-md-2">
+            <%= event.category %>
+          </div>
+          <div class="col-md-4">
+            <%= link_to event.name, event_path(event) %>
+          </div>
+          <div class="col-md-2">
+            <%= event.format_date %>
+          </div>
+          <div class="col-md-2">
+            <%= event.format_time %>
+          </div>
+          <div class="col-md-2">
+            <%= event.tickets_remaining %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
