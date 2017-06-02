@@ -18,6 +18,11 @@
   display: inline;
 }
 
+#buy-ticket {
+  padding: 10px;
+  background-color: white;
+}
+
 .notice {
   color: red;
 }
