@@ -1,3 +1,11 @@
+.app {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url('http://www.diyphotography.net/wordpress/wp-content/uploads/2014/03/adam-elmakias-08.jpg');
+  background-size: cover;
+}
+
 .nav {
   color: #5a5a5a;
   font-size: 11px;
@@ -8,4 +16,8 @@
 
 .nav li {
   display: inline;
+}
+
+.notice {
+  color: red;
 }
