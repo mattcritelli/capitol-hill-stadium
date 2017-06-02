@@ -16,7 +16,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     if @event.save
-      flash[:notice] = "This event has been added."
+      flash[:notice] = 'This event has been added.'
       redirect_to event_path(@event)
     else
       @errors = @event.errors.full_messages
@@ -31,11 +31,10 @@ class EventsController < ApplicationController
   def update
     @event = Event.find(params[:id])
     if @event.update(event_params)
-      flash[:notice] = "This event has been updated."
+      flash[:notice] = 'This event has been updated.'
       redirect_to event_path(@event)
     else
       @errors = @event.errors.full_messages
-      p @errors
       render :edit
     end
   end
