@@ -6,6 +6,18 @@
 
 <p class="notice"><%= notice %></p>
 
+<% if current_user.try(:admin?) %>
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-12" id="admin-option">
+        <p>Admin Panel</p>
+        <%= link_to "Edit", edit_event_path(@event) %> |
+        <%= link_to "Delete", event_path(@event), method: :delete, data: { confirm: "Are you sure you would like to delete this event?"} %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
 <div class="container">
   <div class="row">
     <div class="col-md-12" id="single-event">
@@ -20,20 +32,6 @@
         <% else %>
           <%= link_to "Buy tickets here.", new_event_ticket_path(@event) %>
         <% end %>
-      <% end %>
-    </div>
-  </div>
-</div>
-
-<br>
-
-<div class="container">
-  <div class="row text-center">
-    <div class="col-md-12" id="admin-option">
-      <% if current_user.try(:admin?) %>
-      <p>Admin Panel</p>
-      <%= link_to "Edit", edit_event_path(@event) %>
-      <%= link_to "Delete", event_path(@event), method: :delete, data: { confirm: "Are you sure you would like to delete this event?"} %>
       <% end %>
     </div>
   </div>
