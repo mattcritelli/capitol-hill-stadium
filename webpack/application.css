@@ -33,8 +33,9 @@
 }
 
 #main-header {
-  background-color: lightsteelblue;
-  margin: 0px;
+  background-color: black;
+  color: white;
+  text-align: center;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
@@ -48,4 +49,14 @@
 
 #column-header {
   font-weight: bold;
+}
+
+#single-event {
+  background-color: white;
+  border-radius: 10px;
+}
+
+#admin-option {
+  background-color: salmon;
+  border-radius: 10px;
 }
