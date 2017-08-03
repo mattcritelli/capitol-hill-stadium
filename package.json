@@ -12,5 +12,9 @@
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "bootstrap": "3.3.7"
+  },
+  "scripts": {
+    "webpack:deploy": "webpack --config=webpack/webpack.config.js -p",
+    "heroku-postbuild": "npm run webpack:deploy"
   }
 }
